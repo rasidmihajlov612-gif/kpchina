@@ -205,6 +205,30 @@
   .contact .tel { font-size: 18px; text-decoration: none; color: var(--paper); }
   footer { background: var(--ink); color: #77736a; font-size: 14px; padding: 0 0 32px; }
 
+
+  /* свой человек */
+  .own-top { display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: stretch; }
+  .own-intro p { font-size: 20px; color: #34322d; }
+  .own-intro p + p { margin-top: 14px; color: var(--muted); font-size: 18px; }
+  .own-price { background: var(--accent); color: #fff; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; }
+  .own-price .lbl { font-size: 15px; color: #fbe3d8; }
+  .own-price .big { font-size: 60px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; margin-top: 8px; }
+  .own-price .split { margin-top: auto; padding-top: 24px; display: grid; gap: 10px; }
+  .own-price .split div { display: flex; justify-content: space-between; border-top: 1px solid #ec8a6a; padding-top: 10px; }
+  .own-price .split b { font-weight: 600; }
+  .own-list { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; border-top: 1.5px solid var(--ink); }
+  .own-list .it { padding: 20px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 40px 1fr; gap: 8px; }
+  .own-list .ic { width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: var(--paper); font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+  .own-list b { font-weight: 600; font-size: 19px; display: block; line-height: 1.3; }
+  .own-list small { color: var(--muted); font-size: 15px; display: block; margin-top: 2px; }
+  .month { margin-top: 32px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px 24px 12px; }
+  .month svg { width: 100%; height: auto; }
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; margin-top: 40px; }
+  .rule-fine { margin-top: 40px; border: 1.5px solid var(--ink); border-radius: 16px; padding: 28px 32px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+  .rule-fine .sum { text-align: right; white-space: nowrap; font-size: 44px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+  .rule-fine .sum small { display: block; font-size: 14px; font-weight: 400; color: var(--muted); letter-spacing: 0; margin-top: 6px; }
+  .own-h3 { margin-top: 56px; }
+
   @media (max-width: 900px) {
     nav { display: none; }
     .wrap { padding: 0 16px; }
@@ -214,12 +238,16 @@
     .stage .b2 { left: 16%; top: 130px; width: 74%; }
     .stage .p1 { width: 130px; right: 0; }
     .stage .sun { width: 520px; height: 520px; right: -200px; bottom: -240px; }
-    .nets, .tariffs, .incl, .flow, .terms, .grid2, .extra .list { grid-template-columns: 1fr; }
+    .nets, .tariffs, .incl, .flow, .terms, .grid2, .extra .list, .own-top, .own-list, .rules, .rule-fine { grid-template-columns: 1fr; }
+    .rule-fine .sum { text-align: left; }
+    .month { overflow-x: auto; }
+    .month svg { min-width: 560px; }
     .incl, .flow, .terms { gap: 32px; }
     .bundle { grid-template-columns: 1fr; padding: 24px; }
     .bundle .p { text-align: left; }
     .bundle .p b { font-size: 48px; }
     .tech { grid-template-columns: 1fr; padding: 28px 20px; }
+    .tech::after { width: 150px; height: 150px; right: -60px; top: -75px; }
     .tech .pr { text-align: left; font-size: 44px; }
     .tech-r { grid-template-columns: 1fr 1fr; }
     .steps { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
@@ -254,6 +282,7 @@
       <a href="#subs">Подписчики</a>
       <a href="#sites">Сайты</a>
       <a href="#tech">Технарь</a>
+      <a href="#own">Свой человек</a>
       <a href="#plan">План</a>
       <a href="#works">Работы</a>
     </nav>
@@ -267,7 +296,7 @@
 <div class="hero">
   <div class="wrap">
     <h1>Соцсети, сайты и&nbsp;воронки <span>под&nbsp;ключ</span></h1>
-    <p class="lead">Веду Telegram, Instagram и&nbsp;Threads, собираю лендинги, интернет-магазины и&nbsp;воронки, помогаю быстро набрать подписчиков и&nbsp;беру на&nbsp;себя всю техническую часть.</p>
+    <p class="lead">Веду Telegram, Instagram и&nbsp;Threads, собираю лендинги, интернет-магазины и&nbsp;воронки, помогаю быстро набрать подписчиков и&nbsp;беру на&nbsp;себя всю техническую часть. Или всё сразу по&nbsp;тарифу «Свой человек».</p>
     <div class="who">
       <div><span class="k">Исполнитель</span>Рашид Михайлов</div>
       <div><span class="k">Telegram</span><a href="https://t.me/rassh1337" target="_blank" rel="noopener">@rassh1337</a></div>
@@ -451,6 +480,73 @@
         <li><b>Сайты, лендинги и&nbsp;другое</b>всё, что связано с&nbsp;вашими площадками</li>
         <li><b>Полная поддержка и&nbsp;связь</b>всегда есть кому написать</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Свой человек -->
+<section id="own">
+  <div class="wrap">
+    <div class="head"><h2>Тариф «Свой человек»</h2></div>
+    <div class="own-top">
+      <div class="own-intro">
+        <p>Работаю как свой человек в&nbsp;команде: веду сайт и&nbsp;все соцсети, оформляю, наполняю, привожу подписчиков и&nbsp;собираю воронки.</p>
+        <p>Подходит, если нужен один человек, который закрывает весь маркетинг и&nbsp;техническую часть, без&nbsp;поиска отдельных подрядчиков.</p>
+      </div>
+      <div class="own-price">
+        <span class="lbl">Оплата в&nbsp;месяц, двумя частями</span>
+        <div class="big">155 000 <span class="rub">₽</span></div>
+        <div class="split">
+          <div><span>до 15 числа</span><b>77 500 ₽</b></div>
+          <div><span>до 30 числа</span><b>77 500 ₽</b></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="own-h3">Что входит</h3>
+    <div class="own-list"><div class="it"><span class="ic">1</span><span><b>Сайт</b><small>создание и ведение</small></span></div><div class="it"><span class="ic">2</span><span><b>Соцсети</b><small>Telegram ×2, Threads ×2, Instagram ×2 и американские соцсети</small></span></div><div class="it"><span class="ic">3</span><span><b>Каталоги</b><small>составление каталогов товаров и услуг</small></span></div><div class="it"><span class="ic">4</span><span><b>Наполнение</b><small>соцсети, сайт и все остальные ресурсы</small></span></div><div class="it"><span class="ic">5</span><span><b>Оформление и брендбук</b><small>общий стиль для всех площадок</small></span></div><div class="it"><span class="ic">6</span><span><b>Воронки и лид-магниты</b><small>чтобы подписчики становились клиентами</small></span></div><div class="it"><span class="ic">7</span><span><b>Подписчики</b><small>загрузка ботов и целевой аудитории</small></span></div><div class="it"><span class="ic">8</span><span><b>Новые идеи</b><small>ищу новые возможности заработать</small></span></div></div>
+
+    <h3 class="own-h3">Как работаем</h3>
+    <p class="sub" style="margin-top:0">Месяц делится на&nbsp;две половины. Каждая начинается со&nbsp;встречи, а&nbsp;каждая неделя с&nbsp;планерки.</p>
+    <div class="month">
+    <svg viewBox="0 0 520 132">
+      <line x1="20" y1="58" x2="500" y2="58" stroke="#1b1b19" stroke-width="1.5"/>
+      <rect x="20" y="52" width="232" height="12" rx="6" fill="#ece7dc"/>
+      <rect x="268" y="52" width="232" height="12" rx="6" fill="#ece7dc"/>
+      <g fill="#1b1b19">
+        <circle cx="70" cy="58" r="4"/><circle cx="140" cy="58" r="4"/><circle cx="210" cy="58" r="4"/>
+        <circle cx="310" cy="58" r="4"/><circle cx="380" cy="58" r="4"/><circle cx="450" cy="58" r="4"/>
+      </g>
+      <circle cx="260" cy="58" r="11" fill="#d9542b"/>
+      <circle cx="500" cy="58" r="11" fill="#d9542b"/>
+      <g font-family="Golos Text, sans-serif" text-anchor="middle">
+        <text x="260" y="62" font-size="9" font-weight="700" fill="#fff">15</text>
+        <text x="500" y="62" font-size="9" font-weight="700" fill="#fff">30</text>
+        <text x="20" y="84" font-size="10" fill="#716d64">1</text>
+        <text x="260" y="26" font-size="10.5" font-weight="600" fill="#1b1b19">Встреча</text>
+        <text x="260" y="39" font-size="9.5" fill="#716d64">план на 2 недели, оплата</text>
+        <text x="508" y="26" font-size="10.5" font-weight="600" fill="#1b1b19" text-anchor="end">Встреча</text>
+        <text x="508" y="39" font-size="9.5" fill="#716d64" text-anchor="end">план на 2 недели, оплата</text>
+        <text x="140" y="84" font-size="9.5" fill="#716d64">планерки по понедельникам</text>
+        <text x="380" y="84" font-size="9.5" fill="#716d64">планерки по понедельникам</text>
+        <text x="136" y="112" font-size="10" fill="#1b1b19">реализуем план первой половины</text>
+        <text x="384" y="112" font-size="10" fill="#1b1b19">реализуем план второй половины</text>
+      </g>
+    </svg></div>
+
+    <div class="rules">
+      <div><h3>Встречи 15 и&nbsp;30 числа</h3><p>Обсуждаем планы на&nbsp;ближайшие две недели, составляем якорный план и&nbsp;передаём оплату. Следующие две недели план реализуется.</p></div>
+      <div><h3>Планерка по&nbsp;понедельникам</h3><p>Вместе продумываем посты, формируем материал на&nbsp;неделю и&nbsp;загружаем его в&nbsp;автопостинг.</p></div>
+      <div><h3>Расходы оплачивает заказчик</h3><p>Боты (неактивные аккаунты), нужные нейросети, домены и&nbsp;другие расходники. О&nbsp;каждом расходе предупреждаю заранее, до&nbsp;начала работы.</p></div>
+      <div><h3>Связь</h3><p>На&nbsp;связи всегда, когда физически могу. Если не&nbsp;могу, предупреждаю заранее и&nbsp;делаю сразу, как только появляется возможность.</p></div>
+    </div>
+
+    <div class="rule-fine">
+      <div>
+        <h3>Идеи реализуем только вдвоём</h3>
+        <p>Я&nbsp;предлагаю новые идеи и&nbsp;возможности заработать. Обсуждённые идеи стороны воплощают только вместе: никто не&nbsp;перенимает идею и&nbsp;не&nbsp;реализует её самостоятельно. Сторона, которая нарушила это обязательство, платит другой стороне штраф.</p>
+      </div>
+      <div class="sum">50 000 ₽<small>штраф за&nbsp;нарушение</small></div>
     </div>
   </div>
 </section>
