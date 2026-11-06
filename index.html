@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Рашид Михайлов — соцсети, сайты и воронки</title>
+<meta name="description" content="Ведение Telegram, Instagram, Threads и других соцсетей, набор подписчиков, лендинги, интернет-магазины, воронки и техническая поддержка 24/7.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4f1ea;
+    --card: #fbfaf6;
+    --ink: #1b1b19;
+    --muted: #716d64;
+    --line: #dad5c9;
+    --accent: #d9542b;
+    --accent-ink: #b4421f;
+    --wrap: 1120px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Golos Text", -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
+  .rub { font-weight: 400; }
+
+  /* шапка */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(244,241,234,.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+  .logo { font-weight: 600; text-decoration: none; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 26px; font-size: 15px; }
+  nav a { text-decoration: none; color: var(--muted); }
+  nav a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink); color: var(--paper);
+    text-decoration: none; font-weight: 500; font-size: 15px;
+    padding: 10px 18px; border-radius: 40px; white-space: nowrap;
+  }
+  .btn:hover { background: #000; }
+
+  section { padding: 96px 0 0; }
+  h2 { font-size: clamp(34px, 5vw, 52px); line-height: 1.04; font-weight: 600; letter-spacing: -0.035em; }
+  h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+  .sub { color: var(--muted); font-size: 19px; max-width: 640px; margin-top: 14px; }
+  .head { margin-bottom: 40px; }
+
+  ul.dash { list-style: none; }
+  ul.dash li { padding-left: 20px; position: relative; }
+  ul.dash li + li { margin-top: 6px; }
+  ul.dash li::before { content: ""; position: absolute; left: 0; top: .78em; width: 10px; height: 1.5px; background: var(--accent); }
+
+  /* макеты экранов */
+  .browser { background: var(--card); border-radius: 10px; overflow: hidden; border: 1px solid #d6d0c3; box-shadow: 0 2px 4px rgba(40,30,20,.06), 0 24px 50px -18px rgba(40,30,20,.3); }
+  .browser .bar { height: 22px; display: flex; align-items: center; gap: 6px; padding: 0 10px; background: #ebe7de; border-bottom: 1px solid #d9d3c6; }
+  .browser .bar i { width: 7px; height: 7px; border-radius: 50%; background: #cbc4b6; }
+  .browser img { width: 100%; }
+  .phone { background: var(--ink); padding: 6px; border-radius: 28px; box-shadow: 0 30px 60px -20px rgba(40,30,20,.4); }
+  .phone img { width: 100%; border-radius: 22px; aspect-ratio: 390 / 844; object-fit: cover; object-position: top; }
+
+  /* первый экран */
+  .hero { padding: 72px 0 0; overflow: hidden; }
+  .hero .wrap { position: relative; }
+  .hero h1 { font-size: clamp(48px, 8.4vw, 104px); line-height: .95; font-weight: 600; letter-spacing: -0.045em; max-width: 900px; }
+  .hero h1 span { color: var(--accent); }
+  .hero .lead { font-size: 21px; max-width: 620px; margin-top: 28px; color: #34322d; }
+  .hero .who { display: flex; flex-wrap: wrap; gap: 14px 40px; margin-top: 32px; font-size: 16px; }
+  .hero .who .k { display: block; color: var(--muted); font-size: 14px; }
+  .stage { position: relative; height: 520px; margin-top: 40px; }
+  .stage .sun { position: absolute; right: -180px; bottom: -340px; width: 820px; height: 820px; border-radius: 50%; background: var(--accent); }
+  .stage .b1 { position: absolute; left: 0; top: 40px; width: 58%; transform: rotate(-3deg); }
+  .stage .b2 { position: absolute; left: 30%; top: 150px; width: 54%; transform: rotate(2deg); }
+  .stage .p1 { position: absolute; right: 4%; top: 10px; width: 210px; transform: rotate(5deg); }
+
+  /* соцсети */
+  .nets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .net { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+  .net .n { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+  .net .n svg { width: 26px; height: 26px; }
+  .net .v { font-size: 40px; font-weight: 600; letter-spacing: -0.03em; margin-top: 36px; line-height: 1; }
+  .net .m { color: var(--muted); font-size: 15px; margin-top: 6px; }
+
+  .bundle { margin-top: 16px; background: var(--accent); color: #fff; border-radius: 16px; padding: 32px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; }
+  .bundle .save { display: table; background: #fff; color: var(--accent-ink); font-weight: 600; font-size: 14px; padding: 4px 12px; border-radius: 30px; margin-bottom: 14px; }
+  .bundle .t { font-size: 26px; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
+  .bundle .t small { display: block; font-size: 16px; font-weight: 400; color: #fbe3d8; margin-top: 8px; max-width: 520px; letter-spacing: 0; }
+  .bundle .p { text-align: right; }
+  .bundle .p s { color: #f6c7b3; font-size: 18px; display: block; }
+  .bundle .p b { font-size: 60px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; display: block; }
+  .bundle .p small { font-size: 15px; color: #fbe3d8; }
+
+  .incl { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+  .posts { display: flex; align-items: flex-end; gap: 8px; margin: 4px 0 14px; }
+  .posts i { width: 34px; height: 42px; border-radius: 6px; background: var(--ink); }
+  .posts i.x { background: transparent; border: 1.5px dashed var(--accent); }
+  .posts span { font-size: 14px; color: var(--muted); margin-left: 4px; }
+
+  .extra { margin-top: 56px; }
+  .extra .hd { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 24px; margin-bottom: 12px; }
+  .extra .hd h3 { margin: 0; }
+  .extra .hd span { font-size: 15px; color: var(--muted); }
+  .extra .list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; border-top: 1.5px solid var(--ink); }
+  .extra .it { display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .extra .it svg { width: 30px; height: 30px; flex: none; }
+  .extra .it .nm { font-weight: 500; line-height: 1.25; }
+  .extra .it .nm small { display: block; font-weight: 400; font-size: 14px; color: var(--muted); }
+  .extra .it .pr { margin-left: auto; white-space: nowrap; font-weight: 600; font-size: 20px; letter-spacing: -0.01em; }
+  .extra .it .pr small { font-weight: 400; font-size: 14px; color: var(--muted); letter-spacing: 0; }
+
+  /* подписчики */
+  .tariffs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .tariff { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; }
+  .tariff.hot { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .tariff .geo { font-weight: 500; }
+  .tariff .cost { font-size: 52px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; margin-top: 28px; }
+  .tariff .per { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .tariff .ex { color: var(--muted); font-size: 15px; margin-top: 18px; }
+  .tariff.hot .per { color: #b9b4a8; }
+  .tariff ul { font-size: 15px; margin: 18px 0 20px; }
+  .tariff .drop { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 15px; }
+  .tariff.hot .drop { border-color: #3d3c38; }
+  .tariff .gap { height: 20px; }
+
+  .flow { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 48px; }
+  .flow p + p { margin-top: 10px; }
+  .chart { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px 24px 18px; }
+  .chart svg { width: 100%; height: auto; }
+  .cap { font-size: 14px; color: var(--muted); margin-top: 8px; }
+
+  /* сайты */
+  .rows { border-top: 1.5px solid var(--ink); }
+  .row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .row .name { font-weight: 600; font-size: 20px; }
+  .row .name small { display: block; font-weight: 400; color: var(--muted); font-size: 15px; margin-top: 2px; }
+  .row .price { white-space: nowrap; font-weight: 600; font-size: 30px; letter-spacing: -0.03em; }
+  .row .price small { font-weight: 400; color: var(--muted); font-size: 16px; letter-spacing: 0; }
+  .terms { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
+
+  /* технарь */
+  .tech { background: var(--ink); color: var(--paper); border-radius: 20px; padding: 48px; position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr auto; gap: 24px 48px; }
+  .tech::after { content: ""; position: absolute; right: -90px; top: -130px; width: 300px; height: 300px; border-radius: 50%; background: var(--accent); }
+  .tech > * { position: relative; z-index: 1; }
+  .tech .tag { display: inline-block; font-size: 14px; font-weight: 500; border: 1px solid #55534d; border-radius: 30px; padding: 3px 12px; color: #c9c4b8; }
+  .tech h2 { margin: 18px 0 14px; }
+  .tech p { color: #c9c4b8; max-width: 520px; font-size: 18px; }
+  .tech .pr { align-self: end; text-align: right; font-size: 56px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; color: #ff7a4f; white-space: nowrap; }
+  .tech .pr small { display: block; font-size: 16px; font-weight: 400; color: #c9c4b8; letter-spacing: 0; margin-top: 6px; }
+  .tech-r { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; border-top: 1px solid #3a3935; padding-top: 28px; margin-top: 12px; list-style: none; }
+  .tech-r li { padding-left: 18px; position: relative; color: #b9b4a8; font-size: 15px; line-height: 1.4; }
+  .tech-r li::before { content: ""; position: absolute; left: 0; top: .6em; width: 10px; height: 1.5px; background: var(--accent); }
+  .tech-r b { display: block; color: var(--paper); font-weight: 500; font-size: 17px; margin-bottom: 4px; }
+
+  /* план */
+  .plan-chart { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 28px 28px 20px; }
+  .plan-chart svg { width: 100%; height: auto; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: var(--muted); margin-top: 8px; }
+  .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 32px; }
+  .step { border-top: 2px solid var(--ink); padding-top: 16px; }
+  .step.on { border-color: var(--accent); }
+  .step .n { width: 32px; height: 32px; border-radius: 50%; background: var(--ink); color: var(--paper); font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+  .step.on .n { background: var(--accent); }
+  .step h3 { margin: 14px 0 8px; font-size: 19px; }
+  .step p { font-size: 15px; color: #3a3832; }
+  .step p + p { margin-top: 8px; }
+
+  /* портфолио */
+  .case { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: center; padding: 40px 0; border-bottom: 1px solid var(--line); }
+  .case:first-of-type { padding-top: 0; }
+  .case .shots { position: relative; padding-right: 70px; }
+  .case .shots .phone { position: absolute; right: 0; bottom: -24px; width: 150px; }
+  .kind { display: inline-block; font-size: 13px; font-weight: 500; color: var(--accent-ink); border: 1px solid var(--accent); border-radius: 30px; padding: 2px 11px; }
+  .case .ttl { font-weight: 600; font-size: 26px; line-height: 1.15; letter-spacing: -0.02em; margin: 12px 0 10px; }
+  .case p { color: #3a3832; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 40px; margin-top: 56px; }
+  .mini .ttl { font-weight: 600; font-size: 20px; margin: 20px 0 8px; line-height: 1.2; }
+  .mini p { color: #3a3832; font-size: 15px; margin-top: 8px; }
+  .phones { display: flex; gap: 20px; }
+  .phones .phone { width: 170px; }
+
+  /* контакт */
+  .contact { margin: 96px 0 0; padding: 72px 0; background: var(--ink); color: var(--paper); }
+  .contact .wrap { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; }
+  .contact h2 { max-width: 620px; }
+  .contact p { color: #a9a499; margin-top: 14px; font-size: 18px; }
+  .contact .links { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+  .contact .btn { background: var(--accent); color: #fff; font-size: 18px; padding: 14px 26px; }
+  .contact .btn:hover { background: var(--accent-ink); }
+  .contact .tel { font-size: 18px; text-decoration: none; color: var(--paper); }
+  footer { background: var(--ink); color: #77736a; font-size: 14px; padding: 0 0 32px; }
+
+  @media (max-width: 900px) {
+    nav { display: none; }
+    .wrap { padding: 0 16px; }
+    section { padding-top: 72px; }
+    .stage { height: 380px; }
+    .stage .b1 { width: 78%; }
+    .stage .b2 { left: 16%; top: 130px; width: 74%; }
+    .stage .p1 { width: 130px; right: 0; }
+    .stage .sun { width: 520px; height: 520px; right: -200px; bottom: -240px; }
+    .nets, .tariffs, .incl, .flow, .terms, .grid2, .extra .list { grid-template-columns: 1fr; }
+    .incl, .flow, .terms { gap: 32px; }
+    .bundle { grid-template-columns: 1fr; padding: 24px; }
+    .bundle .p { text-align: left; }
+    .bundle .p b { font-size: 48px; }
+    .tech { grid-template-columns: 1fr; padding: 28px 20px; }
+    .tech .pr { text-align: left; font-size: 44px; }
+    .tech-r { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+    .case { grid-template-columns: 1fr; gap: 40px; }
+    .case .shots { padding-right: 40px; }
+    .case .shots .phone { width: 100px; bottom: -20px; }
+    .row .price { font-size: 24px; }
+    .contact .links { align-items: flex-start; }
+  }
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    .hero { padding-top: 44px; }
+    .hero .lead { font-size: 18px; }
+    .sub { font-size: 17px; }
+    .stage { height: 300px; }
+    .stage .b2 { top: 100px; }
+    .stage .p1 { width: 104px; }
+    .tech-r, .steps { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; gap: 6px; }
+    .phones .phone { width: 46%; }
+    .header-btn-text { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Рашид Михайлов</a>
+    <nav>
+      <a href="#smm">Соцсети</a>
+      <a href="#subs">Подписчики</a>
+      <a href="#sites">Сайты</a>
+      <a href="#tech">Технарь</a>
+      <a href="#plan">План</a>
+      <a href="#works">Работы</a>
+    </nav>
+    <a class="btn" href="https://t.me/rassh1337" target="_blank" rel="noopener"><span class="header-btn-text">Написать в&nbsp;</span>Telegram</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Первый экран -->
+<div class="hero">
+  <div class="wrap">
+    <h1>Соцсети, сайты и&nbsp;воронки <span>под&nbsp;ключ</span></h1>
+    <p class="lead">Веду Telegram, Instagram и&nbsp;Threads, собираю лендинги, интернет-магазины и&nbsp;воронки, помогаю быстро набрать подписчиков и&nbsp;беру на&nbsp;себя всю техническую часть.</p>
+    <div class="who">
+      <div><span class="k">Исполнитель</span>Рашид Михайлов</div>
+      <div><span class="k">Telegram</span><a href="https://t.me/rassh1337" target="_blank" rel="noopener">@rassh1337</a></div>
+      <div><span class="k">Телефон</span><a href="tel:+79247698050">+7 924 769-80-50</a></div>
+    </div>
+    <div class="stage">
+      <div class="sun"></div>
+      <div class="browser b1"><div class="bar"><i></i><i></i><i></i></div><img src="img/medvedev.jpg" alt="Лендинг агентства Андрея Медведева"></div>
+      <div class="browser b2"><div class="bar"><i></i><i></i><i></i></div><img src="img/choroon.jpg" alt="Интернет-магазин «Чороон XXI Век»"></div>
+      <div class="phone p1"><img src="img/multilink-m.jpg" alt="Мультиссылка «Маленькой Якутии»"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Соцсети -->
+<section id="smm">
+  <div class="wrap">
+    <div class="head">
+      <h2>Ведение соцсетей</h2>
+      <p class="sub">Оплата помесячно. Можно взять одну соцсеть или все три сразу, так выгоднее.</p>
+    </div>
+
+    <div class="nets">
+      <div class="net">
+        <div class="n"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2aa3df"/><path d="M5.6 11.7l10.6-4.2c.5-.2 1 .1.8.9l-1.8 8.5c-.1.6-.5.7-1 .5l-2.8-2-1.3 1.3c-.2.2-.3.3-.6.3l.2-2.9 5.2-4.7c.2-.2 0-.3-.3-.1l-6.5 4.1-2.7-.9c-.6-.2-.6-.6.2-.8z" fill="#fff"/></svg>Telegram</div>
+        <div class="v">17 000 <span class="rub">₽</span></div>
+        <div class="m">в месяц</div>
+      </div>
+      <div class="net">
+        <div class="n"><svg viewBox="0 0 24 24"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f9a43a"/><stop offset=".5" stop-color="#e1306c"/><stop offset="1" stop-color="#6a3fd1"/></linearGradient></defs><rect width="24" height="24" rx="6.5" fill="url(#ig)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.1" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16" cy="8" r="1" fill="#fff"/></svg>Instagram</div>
+        <div class="v">12 600 <span class="rub">₽</span></div>
+        <div class="m">в месяц</div>
+      </div>
+      <div class="net">
+        <div class="n"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6.5" fill="#1b1b19"/><text x="12" y="17" text-anchor="middle" font-family="Golos Text, sans-serif" font-size="14" font-weight="600" fill="#fff">@</text></svg>Threads</div>
+        <div class="v">7 200 <span class="rub">₽</span></div>
+        <div class="m">в месяц</div>
+      </div>
+    </div>
+
+    <div class="bundle">
+      <div class="t"><span class="save">−7 300 ₽ в месяц</span>Пакет из трёх соцсетей<small>Telegram, Instagram и&nbsp;Threads вместе дешевле, чем по&nbsp;отдельности. Дополнительные площадки можно добавить к&nbsp;пакету</small></div>
+      <div class="p"><s>36 800 ₽</s><b>29 500 <span class="rub">₽</span></b><small>в месяц</small></div>
+    </div>
+
+    <div class="incl">
+      <div>
+        <h3>Что входит</h3>
+        <ul class="dash">
+          <li>Оформление постов</li>
+          <li>Написание текстов</li>
+          <li>Публикация</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Сколько постов</h3>
+        <div class="posts"><i></i><i></i><i></i><i></i><i class="x"></i><span>в день</span></div>
+        <p>До 4 постов в&nbsp;день в&nbsp;каждой соцсети входят в&nbsp;цену. Каждый пост сверх четырёх стоит 360&nbsp;₽.</p>
+      </div>
+    </div>
+
+    <div class="extra">
+      <div class="hd"><h3>Дополнительные площадки</h3><span>Те&nbsp;же условия: до&nbsp;4 постов в&nbsp;день, сверх&nbsp;— 360&nbsp;₽ за&nbsp;пост</span></div>
+      <div class="list">
+        <div class="it"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6.5" fill="#0077ff"/><text x="12" y="16" font-size="9.5" font-family="Golos Text, sans-serif" font-weight="700" fill="#fff" text-anchor="middle">VK</text></svg><span class="nm">ВКонтакте<small>сообщество, посты, клипы</small></span><span class="pr">14 400 ₽ <small>в мес.</small></span></div>
+        <div class="it"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6.5" fill="#1b1b19"/><path d="M12 3.5c.4 4.6 3.9 8.1 8.5 8.5-4.6.4-8.1 3.9-8.5 8.5-.4-4.6-3.9-8.1-8.5-8.5 4.6-.4 8.1-3.9 8.5-8.5z" fill="#fff"/></svg><span class="nm">Дзен<small>посты и&nbsp;статьи</small></span><span class="pr">10 800 ₽ <small>в мес.</small></span></div>
+        <div class="it"><svg viewBox="0 0 24 24"><defs><linearGradient id="mx" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#3b6cff"/><stop offset="1" stop-color="#9a4dff"/></linearGradient></defs><rect width="24" height="24" rx="6.5" fill="url(#mx)"/><text x="12" y="16.2" font-size="10" font-family="Golos Text, sans-serif" font-weight="700" fill="#fff" text-anchor="middle">M</text></svg><span class="nm">Макс<small>канал</small></span><span class="pr">9 000 ₽ <small>в мес.</small></span></div>
+        <div class="it"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="6.5" fill="#ee8208"/><text x="12" y="16" font-size="9.5" font-family="Golos Text, sans-serif" font-weight="700" fill="#fff" text-anchor="middle">ОК</text></svg><span class="nm">Одноклассники<small>группа</small></span><span class="pr">7 200 ₽ <small>в мес.</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Подписчики -->
+<section id="subs">
+  <div class="wrap">
+    <div class="head">
+      <h2>Набор подписчиков</h2>
+      <p class="sub">Цена за одного подписчика. Часть аудитории со&nbsp;временем отписывается, в&nbsp;каждом тарифе указано, сколько примерно.</p>
+    </div>
+
+    <div class="tariffs">
+      <div class="tariff">
+        <div class="geo">Весь мир</div>
+        <div class="cost">1,7 <span class="rub">₽</span></div>
+        <div class="per">за подписчика</div>
+        <div class="ex">1 000 подписчиков = 1 700 ₽</div>
+        <div class="gap"></div>
+        <div class="drop">Отписки около 10% в&nbsp;месяц</div>
+      </div>
+      <div class="tariff">
+        <div class="geo">СНГ</div>
+        <div class="cost">2,2 <span class="rub">₽</span></div>
+        <div class="per">за подписчика</div>
+        <div class="ex">1 000 подписчиков = 2 200 ₽</div>
+        <div class="gap"></div>
+        <div class="drop">Отписки около 5% в&nbsp;месяц</div>
+      </div>
+      <div class="tariff hot">
+        <div class="geo">С просмотрами</div>
+        <div class="cost">3,8 <span class="rub">₽</span></div>
+        <div class="per">за подписчика</div>
+        <ul class="dash">
+          <li>Просмотры на&nbsp;новые посты в&nbsp;течение 30&nbsp;дней</li>
+          <li>Просмотров примерно столько&nbsp;же, сколько заказано подписчиков, может быть меньше</li>
+          <li>Подходит для закрытых каналов</li>
+        </ul>
+        <div class="drop">Гарантия 30&nbsp;дней. После неё отписки до&nbsp;100%</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div>
+        <h3>Как это происходит</h3>
+        <p>Подписчиков добавляю партиями в&nbsp;течение нескольких дней, а&nbsp;не&nbsp;всех сразу. Так сообщество не&nbsp;получает ограничений от&nbsp;соцсети.</p>
+        <p>Параллельно слежу за&nbsp;новыми подписчиками и&nbsp;удаляю непристойные профили.</p>
+      </div>
+      <div class="chart">
+        <svg viewBox="0 0 260 150">
+          <line x1="10" y1="120" x2="250" y2="120" stroke="#dad5c9"/>
+          <g fill="#1b1b19">
+            <rect x="18" y="98" width="30" height="22" rx="3"/><rect x="66" y="76" width="30" height="44" rx="3"/><rect x="114" y="54" width="30" height="66" rx="3"/><rect x="162" y="32" width="30" height="88" rx="3"/><rect x="210" y="10" width="30" height="110" rx="3"/>
+          </g>
+          <g fill="#d9542b">
+            <rect x="18" y="98" width="30" height="5" rx="2"/><rect x="66" y="76" width="30" height="5" rx="2"/><rect x="114" y="54" width="30" height="5" rx="2"/><rect x="162" y="32" width="30" height="5" rx="2"/><rect x="210" y="10" width="30" height="5" rx="2"/>
+          </g>
+          <g font-family="Golos Text, sans-serif" font-size="10" fill="#716d64" text-anchor="middle">
+            <text x="33" y="136">1 день</text><text x="81" y="136">2</text><text x="129" y="136">3</text><text x="177" y="136">4</text><text x="225" y="136">5</text>
+          </g>
+        </svg>
+        <div class="cap">Схема: каждый день приходит новая партия <span style="color:var(--accent-ink)">(оранжевым)</span>, и&nbsp;аудитория растёт ступеньками</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Сайты -->
+<section id="sites">
+  <div class="wrap">
+    <div class="head">
+      <h2>Сайты, лид-магниты и&nbsp;воронки</h2>
+      <p class="sub">Итоговую цену лендинга, магазина и&nbsp;воронки считаю после обсуждения задачи, она зависит от&nbsp;объёма работы.</p>
+    </div>
+
+    <div class="rows">
+      <div class="row"><span class="name">Лид-магнит<small>Полезный материал в&nbsp;обмен на&nbsp;контакт или подписку</small></span><span class="price">18 000 <span class="rub">₽</span></span></div>
+      <div class="row"><span class="name">Воронка<small>Цепочка, которая ведёт человека от&nbsp;подписки к&nbsp;покупке</small></span><span class="price"><small>от</small> 15 000 <span class="rub">₽</span></span></div>
+      <div class="row"><span class="name">Лендинг<small>Одностраничный сайт под&nbsp;услугу или товар</small></span><span class="price"><small>от</small> 30 000 <span class="rub">₽</span></span></div>
+      <div class="row"><span class="name">Интернет-магазин<small>Каталог, карточки товаров, оформление заказа</small></span><span class="price"><small>от</small> 60 000 <span class="rub">₽</span></span></div>
+    </div>
+
+    <div class="terms">
+      <div>
+        <h3>Поддержка</h3>
+        <p>Лид-магниты, воронки, лендинги и&nbsp;сайты поддерживаю постоянно. Изменения, правки и&nbsp;дополнения обсуждаем отдельно, за&nbsp;них возможна доплата.</p>
+      </div>
+      <div>
+        <h3>Оплачивается отдельно</h3>
+        <ul class="dash">
+          <li>Домены</li>
+          <li>Расходники и&nbsp;сервисы, которых у&nbsp;меня ещё нет. Их покупает и&nbsp;оплачивает заказчик</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Технарь -->
+<section id="tech">
+  <div class="wrap">
+    <div class="tech">
+      <div>
+        <span class="tag">Отдельная услуга</span>
+        <h2>Технарь</h2>
+        <p>Ваш технический специалист на&nbsp;связи 24/7. Берёт на&nbsp;себя всё техническое, чтобы вы занимались бизнесом.</p>
+      </div>
+      <div class="pr">135 000 <span class="rub">₽</span><small>в месяц</small></div>
+      <ul class="tech-r">
+        <li><b>Любые технические вопросы</b>круглосуточно, без выходных</li>
+        <li><b>Любые действия в&nbsp;интернете</b>сервисы, аккаунты, настройки</li>
+        <li><b>Сайты, лендинги и&nbsp;другое</b>всё, что связано с&nbsp;вашими площадками</li>
+        <li><b>Полная поддержка и&nbsp;связь</b>всегда есть кому написать</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- План -->
+<section id="plan">
+  <div class="wrap">
+    <div class="head">
+      <h2>План действий</h2>
+      <p class="sub">Так выстраиваю работу с&nbsp;новым клиентом. Порядок и&nbsp;набор услуг подстраиваем под&nbsp;вашу задачу.</p>
+    </div>
+
+    <div class="plan-chart">
+      <svg viewBox="0 0 520 190">
+        <g stroke="#dad5c9" stroke-dasharray="3 4">
+          <line x1="130" y1="10" x2="130" y2="160"/><line x1="260" y1="10" x2="260" y2="160"/><line x1="390" y1="10" x2="390" y2="160"/>
+        </g>
+        <line x1="0" y1="160" x2="520" y2="160" stroke="#1b1b19"/>
+        <path d="M0 160 L130 160 L150 150 L170 138 L190 126 L210 114 L230 104 L260 100 L520 108 L520 160 Z" fill="#cfc9bc"/>
+        <path d="M260 100 L300 92 L340 80 L390 64 L430 50 L470 36 L520 22 L520 108 L260 100 Z" fill="#d9542b"/>
+        <g fill="#1b1b19">
+          <rect x="20" y="146" width="7" height="7" rx="1.5"/><rect x="31" y="146" width="7" height="7" rx="1.5"/><rect x="42" y="146" width="7" height="7" rx="1.5"/><rect x="53" y="146" width="7" height="7" rx="1.5"/><rect x="64" y="146" width="7" height="7" rx="1.5"/><rect x="75" y="146" width="7" height="7" rx="1.5"/>
+        </g>
+        <g font-family="Golos Text, sans-serif" font-size="11" fill="#716d64">
+          <text x="8" y="180">Подготовка</text><text x="138" y="180">База и&#160;посты</text><text x="268" y="180">Реклама и&#160;воронки</text><text x="398" y="180">Заявки и&#160;разбор</text>
+        </g>
+      </svg>
+      <div class="legend"><span><i style="background:#1b1b19"></i>первые посты</span><span><i style="background:#cfc9bc"></i>база подписчиков</span><span><i style="background:#d9542b"></i>целевая аудитория</span></div>
+      <div class="cap">Схема без масштаба: показывает порядок этапов, а&nbsp;не&nbsp;обещанные цифры</div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Подготовка</h3>
+        <p>Оформляем Telegram, Instagram и&nbsp;Threads, выкладываем первые посты, чтобы аккаунт не&nbsp;был пустым.</p>
+        <p>Собираем лид-магнит и&nbsp;воронку, чтобы к&nbsp;рекламе всё было готово.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>База и&nbsp;посты</h3>
+        <p>Добавляем подписчиков партиями, чтобы аккаунт выглядел живым и&nbsp;новым людям было проще подписаться.</p>
+        <p>Каждый день публикуем посты.</p>
+      </div>
+      <div class="step on">
+        <div class="n">3</div>
+        <h3>Реклама и&nbsp;воронки</h3>
+        <p>Когда соцсети наполнены, запускаем рекламу и&nbsp;посевы и&nbsp;приводим целевых подписчиков.</p>
+        <p>Одновременно включаем воронки во&nbsp;всех соцсетях и&nbsp;лид-магниты.</p>
+      </div>
+      <div class="step on">
+        <div class="n">4</div>
+        <h3>Заявки и&nbsp;разбор</h3>
+        <p>Воронка превращает подписчиков в&nbsp;заявки.</p>
+        <p>Каждый месяц смотрим, откуда пришли заявки, и&nbsp;усиливаем то, что работает.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Работы -->
+<section id="works">
+  <div class="wrap">
+    <div class="head"><h2>Наши сайты</h2></div>
+
+    <div class="case">
+      <div class="shots">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="img/choroon.jpg" alt="Сайт «Чороон XXI Век»" loading="lazy"></div>
+        <div class="phone"><img src="img/choroon-m.jpg" alt="" loading="lazy"></div>
+      </div>
+      <div>
+        <span class="kind">Интернет-магазин</span>
+        <div class="ttl">«Чороон XXI Век»</div>
+        <p>Магазин якутской фарфоровой посуды и&nbsp;сувениров. Каталог с&nbsp;разделами, корзина и&nbsp;оформление заказа, мастер-классы, история компании.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="shots">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="img/medvedev.jpg" alt="Сайт агентства Андрея Медведева" loading="lazy"></div>
+        <div class="phone"><img src="img/medvedev-m.jpg" alt="" loading="lazy"></div>
+      </div>
+      <div>
+        <span class="kind">Лендинг</span>
+        <div class="ttl">Агентство Андрея Медведева</div>
+        <p>Лендинг для собственников квартир: агентство сдаёт жильё в&nbsp;аренду в&nbsp;Москве и&nbsp;области. Главная кнопка ведёт сразу в&nbsp;Telegram.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="mini">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="img/vivat.jpg" alt="Сайт стоматологии «Виват»" loading="lazy"></div>
+        <div class="ttl">Стоматология «Виват», Якутск</div>
+        <span class="kind">Лендинг</span>
+        <p>Сайт семейной клиники: услуги, врачи, цены и&nbsp;запись на&nbsp;консультацию.</p>
+      </div>
+      <div class="mini">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="img/malenkaya.jpg" alt="Сайт павильона «Маленькая Якутия»" loading="lazy"></div>
+        <div class="ttl">Павильон «Маленькая Якутия»</div>
+        <span class="kind">Сайт</span>
+        <p>Павильон якутских мастеров в&nbsp;Казани: мастер-классы с&nbsp;записью, резиденты, витрина изделий.</p>
+      </div>
+      <div class="mini">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="img/rashid.jpg" alt="Сайт-визитка агента по аренде" loading="lazy"></div>
+        <div class="ttl">Сайт-визитка агента по&nbsp;аренде</div>
+        <span class="kind">Сайт-визитка</span>
+        <p>Сайт в&nbsp;виде компьютера и&nbsp;телефона: объекты, кейсы, отзывы и&nbsp;мини-игры.</p>
+      </div>
+      <div class="mini">
+        <div class="phones">
+          <div class="phone"><img src="img/multilink-m.jpg" alt="Мультиссылка" loading="lazy"></div>
+          <div class="phone"><img src="img/rashid-m.jpg" alt="Мобильная версия сайта-визитки" loading="lazy"></div>
+        </div>
+        <div class="ttl">Мультиссылка и&nbsp;мобильные версии</div>
+        <span class="kind">Мультиссылка</span>
+        <p>Одна страница со&nbsp;всеми соцсетями павильона и&nbsp;картой. Все сайты удобно открываются с&nbsp;телефона.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="contact">
+  <div class="wrap">
+    <div>
+      <h2>Чтобы начать, напишите мне</h2>
+      <p>Обсудим задачу и&nbsp;посчитаем точную стоимость.</p>
+    </div>
+    <div class="links">
+      <a class="btn" href="https://t.me/rassh1337" target="_blank" rel="noopener">Telegram @rassh1337</a>
+      <a class="tel" href="tel:+79247698050">+7 924 769-80-50</a>
+    </div>
+  </div>
+</div>
+<footer><div class="wrap">Рашид Михайлов · 2026</div></footer>
+
+</body>
+</html>
